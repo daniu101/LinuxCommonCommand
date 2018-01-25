@@ -1,0 +1,99 @@
+root@ubuntu:/home# 
+root@ubuntu:/home# ls                 #显示文件或目录
+manqingxing  manqingxing2  manqingxing3
+root@ubuntu:/home# ls -l                #列出文件的详细信息
+total 12
+drwxr-xr-x 4 manqingxing manqingxing 4096 Dec 28 20:22 manqingxing
+drwxr-xr-x 2 root        root        4096 Dec 28 20:28 manqingxing2
+drwxr-xr-x 2 root        root        4096 Dec 28 20:27 manqingxing3
+root@ubuntu:/home# mkdir manqingxing4                #创建目录
+root@ubuntu:/home# ls
+manqingxing  manqingxing2  manqingxing3  manqingxing4
+root@ubuntu:/home# cd manqingxing                #切换目录
+root@ubuntu:/home/manqingxing# cd /                #切换到跟目录
+root@ubuntu:/# 
+root@ubuntu:/# cd /home/manqingxing2
+root@ubuntu:/home/manqingxing2# cd ..               #切换到上一级目录
+root@ubuntu:/home# pwd               #显示当前目录
+/home
+root@ubuntu:/home# touch ai2               #创建空文件
+root@ubuntu:/home# ls
+ai2  manqingxing  manqingxing2  manqingxing3  manqingxing4
+root@ubuntu:/home# cp ai2 /home/manqingxing4               #拷贝
+root@ubuntu:/home# cd manqingxing4
+root@ubuntu:/home/manqingxing4# ls
+ai2
+root@ubuntu:/home/manqingxing4# touch ai2017
+root@ubuntu:/home/manqingxing4# ls
+ai2  ai2017
+root@ubuntu:/home/manqingxing4# cp /home/manqingxing4/ai2017 /home/manqingxing
+root@ubuntu:/home/manqingxing4# cd /home/manqingxing
+root@ubuntu:/home/manqingxing# ls
+ai2017
+root@ubuntu:/home/manqingxing# mv ai2017 /home/manqingxing3               #移动或重命名
+root@ubuntu:/home/manqingxing# cd /home/manqingxing3
+root@ubuntu:/home/manqingxing3# ls
+ai2017
+root@ubuntu:/home/manqingxing3# cd /home/manqingxing
+root@ubuntu:/home/manqingxing# 
+root@ubuntu:/home/manqingxing# mkdir fileDir
+root@ubuntu:/home/manqingxing# touch file2
+root@ubuntu:/home/manqingxing# ls
+fileDir  file2
+root@ubuntu:/home/manqingxing# rm file2               #删除文件
+root@ubuntu:/home/manqingxing# ls
+fileDir
+root@ubuntu:/home/manqingxing# rm -rf fileDir/               #删除文件夹
+root@ubuntu:/home/manqingxing# ls
+root@ubuntu:/home/manqingxing# 
+root@ubuntu:/home/manqingxing# who               #显示当前登录用户
+manqingxing tty1         2017-12-28 19:55
+manqingxing pts/0        2017-12-28 20:31 (192.168.1.101)
+root@ubuntu:/home/manqingxing# whoami               #显示当前操作用户
+root
+root@ubuntu:/home/manqingxing# hostname               #显示主机名
+ubuntu
+root@ubuntu:/home/manqingxing# uname               #显示系统信息
+Linux
+root@ubuntu:/home/manqingxing# 
+root@ubuntu:/home/manqingxing# ps               #显示瞬间进程状态，当前进程状态
+   PID TTY          TIME CMD
+   985 pts/0    00:00:00 su
+   986 pts/0    00:00:00 bash
+  1032 pts/0    00:00:00 top
+  1033 pts/0    00:00:00 ps
+root@ubuntu:/home/manqingxing# kill -9 1032               #杀死进程
+[1]+  Killed                  top
+root@ubuntu:/home/manqingxing# ps
+   PID TTY          TIME CMD
+   985 pts/0    00:00:00 su
+   986 pts/0    00:00:00 bash
+  1035 pts/0    00:00:00 ps
+root@ubuntu:/home/manqingxing# ifconfig               #查看网络情况
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.103  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::20c:29ff:fe11:3c32  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:11:3c:32  txqueuelen 1000  (Ethernet)
+        RX packets 3013  bytes 259866 (259.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2157  bytes 269261 (269.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 106  bytes 8112 (8.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 106  bytes 8112 (8.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@ubuntu:/home/manqingxing# ping 192.168.1.101               #测试网络连通性
+PING 192.168.1.101 (192.168.1.101) 56(84) bytes of data.
+64 bytes from 192.168.1.101: icmp_seq=1 ttl=128 time=0.498 ms
+64 bytes from 192.168.1.101: icmp_seq=2 ttl=128 time=0.386 ms
+^Z               #Ctrl+Z 退出测试
+[1]+  Stopped                 ping 192.168.1.101
+
+root@ubuntu:/home/manqingxing# clear               #清屏
+
